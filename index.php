@@ -27,7 +27,7 @@
             <div class="filters">
                 <p id="selected-album" onclick="album()">Álbum</p>
                 <p id="selected-auto" onclick="auto()">Auto Load</p>
-                <p id="selected-scroll">Scroll</p>
+                <p id="selected-scroll" onclick="addItens()">Scroll</p>
             </div>
         </div>
     </header>
@@ -66,14 +66,7 @@
                 </div>
             </div> -->
 
-
-            <div id="items-wrapper">
-
-                <div id="items">
-                    <div class="item">
-    
-            
-                        <?php
+            <?php
 
 
                             $caminho = "./imgs/";
@@ -90,12 +83,9 @@
                                 ";
                             }
 
-                        ?>
+            ?>
 
-                    </div>
                     
-                </div>
-            </div> 
         </div>
 
     
