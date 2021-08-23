@@ -4,6 +4,8 @@ const filters = document.querySelector('.filters')
 const imgs = document.querySelectorAll('img')
 const selectedAuto = document.querySelector('#selected-auto')
 
+
+
 const itemsWrapper = document.querySelector('#items-wrapper ')
 const items = document.querySelector("#items")
 const item = document.querySelectorAll(".item")
@@ -22,6 +24,8 @@ function removeClassImgs () {
 
         item.classList.remove("item-selected")
     })
+
+    contentWidht.classList.remove("active")
    
 }
 
@@ -76,6 +80,9 @@ function auto() {
 
 // scroll
 
+const content = document.querySelector('.content-filters')
+const contentWidht = document.querySelector('.content-filters.width')
+
 const SelectedScroll = document.querySelector('.selected-scroll')
 
 function scroll() {
@@ -100,6 +107,9 @@ function scrollImgs() {
     clearInterval(auto)
     removeClassImgs()
     
+    contentWidht.classList.toggle("active")
+
+
     itemsWrapper.classList.add("wrapper-selected")
 
     items.classList.add("items-selected")
@@ -115,5 +125,29 @@ function scrollImgs() {
 
     scroll()
     
+}
+
+
+
+function imgs1() {
+    document.querySelector("#items-wrapper.wrapper-selected").style.width = "50vw"
+    item.forEach(it => {
+        it.style.width = "100%"
+    })
+    
+}
+function imgs2() {
+    document.querySelector("#items-wrapper.wrapper-selected").style.width = "70vw"
+    item.forEach(it => {
+        it.style.width = "50%"
+    })
+
+}
+function imgs3() {
+    document.querySelector("#items-wrapper.wrapper-selected").style.width = "80vw"
+    item.forEach(it => {
+        it.style.width = "34%"
+    })
+
 }
 

@@ -30,7 +30,7 @@ main {
 
 /* header */
 
-header {
+.header {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -75,4 +75,13 @@ img {
     border-radius: 0.625rem;
     height: 345px;
     width: 345px;
+}
+
+
+.invisible {
+    
+    visibility: hidden; 
+    opacity: 0;
+    display: none
+    
 }

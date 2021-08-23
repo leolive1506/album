@@ -20,7 +20,7 @@
 
 <body>
 
-    <header>
+    <header class="header">
         <h1 class="title-primary">Senhora patinha</h1>
         <div class="content-filters">
             <h2 class="show-filter" onclick="showFilters()">Modo exibição</h2>
@@ -37,12 +37,14 @@
     <main>
         <div class="content">
 
-            
-            <h2 class="show-filter" >Selecione quantidade de imagens desejada</h2>
-            <div class="addWidthImgs filters display-block">
-                <p>1 imagem</p>
-                <p>2 imagens</p>
-                <p>3 imagens</p>
+            <div class="content-filters width">
+
+                <h2 class="show-filter" >Selecione quantidade de imagens desejada</h2>
+                <div class="filters display-block">
+                    <p id="img1" onclick="imgs1()">1 imagem</p>
+                    <p id="img2" onclick="imgs2()">2 imagens</p>
+                    <p id="img3" onclick="imgs3()">3 imagens</p>
+                </div>
             </div>
 
 
