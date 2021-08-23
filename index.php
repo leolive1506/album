@@ -27,7 +27,7 @@
             <div class="filters">
                 <p id="selected-album" onclick="album()">Álbum</p>
                 <p id="selected-auto" onclick="auto()">Auto Load</p>
-                <p id="selected-scroll" onclick="addItens()">Scroll</p>
+                <p id="selected-scroll" onclick="scrollImgs()">Scroll</p>
             </div>
         </div>
     </header>
@@ -37,48 +37,15 @@
     <main>
         <div class="content">
 
+            
+            <h2 class="show-filter" >Selecione quantidade de imagens desejada</h2>
+            <div class="addWidthImgs filters display-block">
+                <p>1 imagem</p>
+                <p>2 imagens</p>
+                <p>3 imagens</p>
+            </div>
 
-            <!-- <div id="items-wrapper">
-                <div id="items">
-                    <div class="item"> 
-                        <img src="/imgs/FOFURAAAA.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item"> 
-                        <img src="/imgs/IMG-20210318-WA0074.jpg" alt="Fofinha" >
-                    </div>
 
-                    <div class="item">
-                        <img src="/imgs/IMG-20210711-WA0018.jpg" alt="Fofinha" >
-                    </div>
-
-                    <div class="item">
-                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item">
-                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item">
-                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item">
-                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div id="items-wrapper">
-                <div id="items">
-                    <div class="item"> 
-                        <img src="/imgs/FOFURAAAA.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item"> 
-                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
-                    </div>
-                    <div class="item"> 
-                        <img src="/imgs/IMG-20210320-WA0284.jpg " alt="Fofinha" >
-                    </div>
-                    
-                </div>
-            </div> -->
             <div id="items-wrapper" class="">
                 <div id="items" class="">
                     <?php

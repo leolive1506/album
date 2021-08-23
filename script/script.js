@@ -87,8 +87,8 @@ function scroll() {
             if(event.deltaY > 0) {
                 event.target.scrollBy(350, 0)
             } else {
-                document.querySelector("body").style.overflow = "hidden"
-                event.target.scrollBy(-350, 0)
+                
+                event.target.scrollBy(0, 0)
             }
         })
 
@@ -96,7 +96,7 @@ function scroll() {
 }
 
 
-function addItens() {
+function scrollImgs() {
     clearInterval(auto)
     removeClassImgs()
     
