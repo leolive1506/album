@@ -32,9 +32,9 @@
         </div>
     </header>
 
-                    
 
-<main>
+
+    <main>
         <div class="content">
 
 
@@ -65,32 +65,50 @@
                     </div>
                 </div>
             </div> -->
-
-            <?php
-
-
-                            $caminho = "./imgs/";
-
-                            // selecionar só .jpg
-                            $imagens = glob($caminho . "*.jpg");
-
-                            // fazer echo de cada imagem
-                            foreach ($imagens as $imagem) {
-
-                                echo "
-                                
-                                <img class='album' src='{$imagem}' alt='Img'>
-                                ";
-                            }
-
-            ?>
-
+            <!-- <div id="items-wrapper">
+                <div id="items">
+                    <div class="item"> 
+                        <img src="/imgs/FOFURAAAA.jpg" alt="Fofinha" >
+                    </div>
+                    <div class="item"> 
+                        <img src="/imgs/IMG-20210713-WA0010.jpg" alt="Fofinha" >
+                    </div>
+                    <div class="item"> 
+                        <img src="/imgs/IMG-20210320-WA0284.jpg " alt="Fofinha" >
+                    </div>
                     
+                </div>
+            </div> -->
+            <div id="items-wrapper" class="">
+                <div id="items" class="">
+                    <?php
+
+                        $caminho = "./imgs/";
+
+                        // selecionar só .jpg
+                        $imagens = glob($caminho . "*.jpg");
+
+                        // fazer echo de cada imagem
+                        foreach ($imagens as $imagem) {
+
+                            echo "<div class='item'>
+                                        <img class='' src='{$imagem}' alt='Img'>
+                                    </div>
+                                    ";
+                        }
+
+                ?>
+                </div>
+
+            </div>
+
+
+
         </div>
 
-    
-</main> 
-        <script src="./script/script.js"></script>
+
+    </main>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>

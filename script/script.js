@@ -4,6 +4,26 @@ const filters = document.querySelector('.filters')
 const imgs = document.querySelectorAll('img')
 const selectedAuto = document.querySelector('#selected-auto')
 
+const itemsWrapper = document.querySelector('#items-wrapper ')
+const items = document.querySelector("#items")
+const item = document.querySelectorAll(".item")
+
+
+function removeClassImgs () {
+    imgs.forEach((img) => {
+        img.classList.remove('auto')
+        img.classList.remove('selected')
+        img.classList.remove('scroll')
+    })
+
+    itemsWrapper.classList.remove("wrapper-selected")
+    items.classList.remove("items-selected")
+    item.forEach(item => {
+
+        item.classList.remove("item-selected")
+    })
+   
+}
 
 function showFilters() {
     h2.classList.toggle('hover')
@@ -12,16 +32,15 @@ function showFilters() {
 
 function album() {
     
-    window.location.reload(true)
+    removeClassImgs()
 }
 
 // troca de img
 
 function auto() {
-    itemsWrapper.removeAttribute("id")
+    removeClassImgs()
     
-    imgs.forEach((img) => {
-        img.classList.remove('auto')
+    imgs.forEach((img) => { 
         img.classList.add('auto')
     })
 
@@ -59,47 +78,41 @@ function auto() {
 
 const SelectedScroll = document.querySelector('.selected-scroll')
 
-const itemsWrapper = document.createElement('div')
-const items = document.createElement("div")
+function scroll() {
+    
+    document.querySelector("#items")
+        .addEventListener("wheel", event => {
+    
+            // console.log(event)
+            if(event.deltaY > 0) {
+                event.target.scrollBy(350, 0)
+            } else {
+                document.querySelector("body").style.overflow = "hidden"
+                event.target.scrollBy(-350, 0)
+            }
+        })
 
+        document.querySelector("body").style.overflow = "auto"
+}
 
 
 function addItens() {
+    clearInterval(auto)
+    removeClassImgs()
     
-    itemsWrapper.setAttribute("id", "items-wrapper")
+    itemsWrapper.classList.add("wrapper-selected")
 
-    items.setAttribute("id", "items")
+    items.classList.add("items-selected")
 
-    
-
-    itemsWrapper.appendChild(items)
+    item.forEach(item => {
+        item.classList.add("item-selected")
+    })
 
     imgs.forEach(img => {
-        img.classList.replace("album", "scroll")
-        const item = document.createElement("div")
-        item.classList.add("item")
-
-        items.appendChild(item)
-        item.appendChild(img)
-
-        
+        img.classList.add("scroll")
     })
     
-    document.querySelector(".content").appendChild(itemsWrapper)
-    
-    function scroll() {
-    
-        document.querySelector("#items")
-            .addEventListener("wheel", event => {
-        
-                console.log(event)
-                if(event.deltaY > 0) {
-                    event.target.scrollBy(350,-5)
-                } else {
-                    event.target.scrollBy(-350, -6)
-                }
-            })
-    }
+
     scroll()
     
 }
