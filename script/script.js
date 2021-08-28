@@ -1,47 +1,47 @@
-const h2 = document.querySelector('.show-filter')
-const filters = document.querySelector('.filters')
+const selected = el => document.querySelector(el)
+const selectedAll = el => document.querySelectorAll(el)
 
-const imgs = document.querySelectorAll('img')
-const selectedAuto = document.querySelector('#selected-auto')
-
-
-
-const itemsWrapper = document.querySelector('#items-wrapper ')
-const items = document.querySelector("#items")
-const item = document.querySelectorAll(".item")
+const imgs = selectedAll('img')
+const itemsWrapper = selected('#items-wrapper ')
+const items = selected("#items")
+const item = selectedAll(".item")
 
 
 function removeClassImgs () {
+
     imgs.forEach((img) => {
-        img.classList.remove('auto')
-        img.classList.remove('selected')
-        img.classList.remove('scroll')
+        img.classList.remove('auto', 'selected', 'scroll', 'item')
     })
-
+    
     itemsWrapper.classList.remove("wrapper-selected")
+    itemsWrapper.style.width = ""
     items.classList.remove("items-selected")
-    item.forEach(item => {
 
+    item.forEach(item => {
+        
         item.classList.remove("item-selected")
+        item.style.width = ""
     })
 
-    contentWidht.classList.remove("active")
+    selected('.content-filters.width')
+        .classList.remove("active")
    
 }
 
 function showFilters() {
-    h2.classList.toggle('hover')
-    filters.classList.toggle('display-block')
+    selected('.show-filter')
+        .classList.toggle('hover')
+    selected('.filters')
+        .classList.toggle('display-block')
 }
 
 function album() {
-    
     removeClassImgs()
 }
 
 // troca de img
-
 function auto() {
+
     removeClassImgs()
     
     imgs.forEach((img) => { 
@@ -52,7 +52,7 @@ function auto() {
 
         let time = 2000,
             currentImageIndex = 0,
-            imagesAuto = document.querySelectorAll('img.auto')
+            imagesAuto = selectedAll('img.auto')
         max = imagesAuto.length
 
         function nextImage() {
@@ -79,35 +79,29 @@ function auto() {
 }
 
 // scroll
-
-const content = document.querySelector('.content-filters')
-const contentWidht = document.querySelector('.content-filters.width')
-
-const SelectedScroll = document.querySelector('.selected-scroll')
+const SelectedScroll = selected('.selected-scroll')
 
 function scroll() {
     
-    document.querySelector("#items")
-        .addEventListener("wheel", event => {
+    items.addEventListener("wheel", event => {
     
             // console.log(event)
             if(event.deltaY > 0) {
                 event.target.scrollBy(350, 0)
-            } else {
-                
+            } else {                
                 event.target.scrollBy(0, 0)
             }
         })
-
-        document.querySelector("body").style.overflow = "auto"
 }
 
 
 function scrollImgs() {
-    clearInterval(auto)
+
+    clearInterval(auto())
     removeClassImgs()
     
-    contentWidht.classList.toggle("active")
+    selected('.content-filters.width')
+        .classList.toggle("active")
 
 
     itemsWrapper.classList.add("wrapper-selected")
@@ -127,24 +121,23 @@ function scrollImgs() {
     
 }
 
-
-
+// width imgs 
 function imgs1() {
-    document.querySelector("#items-wrapper.wrapper-selected").style.width = "50vw"
+    selected("#items-wrapper.wrapper-selected").style.width = "45vw"
     item.forEach(it => {
         it.style.width = "100%"
     })
     
 }
 function imgs2() {
-    document.querySelector("#items-wrapper.wrapper-selected").style.width = "70vw"
+    selected("#items-wrapper.wrapper-selected").style.width = "60vw"
     item.forEach(it => {
         it.style.width = "50%"
     })
 
 }
 function imgs3() {
-    document.querySelector("#items-wrapper.wrapper-selected").style.width = "80vw"
+    selected("#items-wrapper.wrapper-selected").style.width = "70vw"
     item.forEach(it => {
         it.style.width = "34%"
     })
