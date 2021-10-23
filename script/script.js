@@ -79,7 +79,6 @@ function auto() {
 }
 
 // scroll
-const SelectedScroll = selected('.selected-scroll')
 
 function scroll() {
     

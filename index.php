@@ -32,12 +32,22 @@
         </div>
     </header>
 
+    <div id="new-img">
+        <!-- onsubmit="Form.submitForm(event)" -->
+        <form action="foo.php" method="post" enctype="multipart/form-data">
+            <label for="add-imgs">Adicionar imagem</label>
+            <input type="file" id="add-imgs" multiple>
+            <button>Adicionar</button>
+
+            
+        </form>
+    </div>
 
 
     <main>
         <div class="content">
 
-            <div class="content-filters width">
+            <div class="content-filters width"> 
 
                 <h2 class="show-filter" >Selecione quantidade de imagens desejada</h2>
                 <div class="filters display-block">
@@ -78,6 +88,7 @@
 
     </main>
     <script src="./script/script.js"></script>
+    <script src="./script/new-img.js"></script>
 </body>
 
 </html>
